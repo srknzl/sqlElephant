@@ -11,7 +11,7 @@ app.get("/", async (req, res, next) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Methods", "*");
 
-    db.query("select film_id as id, title as name, hzpn_get(concat('views', film_id)) as views from film limit 20;", (err, r) => {
+    db.query("select film_id as id, title as name, hzpn_get(concat('views', film_id)) as views from film order by id limit 20;", (err, r) => {
         if(err) {
             return res.json({err})
         }
