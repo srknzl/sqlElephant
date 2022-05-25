@@ -1,6 +1,6 @@
 const { Client } = require('hazelcast-client');
 
-const PN_COUNTER_COUNT = 5;
+const PN_COUNTER_COUNT = 20;
 
 async function main() {
     const client = await Client.newHazelcastClient();
