@@ -1,5 +1,4 @@
-# nodeSqlElephant
-Node SQL backend that works with PostgreSQL
+# SQL Elephant
 
 - Start hazelcast first
 
