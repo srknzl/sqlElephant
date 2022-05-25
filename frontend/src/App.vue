@@ -3,7 +3,7 @@
     <div v-for="film in sortedFilms" :key="film.id">
       <p>ID: {{ film.id }}</p>
       <p>Name: {{ film.name }}</p>
-      <p>View count: {{ film.viewCount }}</p>
+      <p>View count: {{ film.views }}</p>
     </div>
   </div>
 </template>
@@ -20,7 +20,7 @@ const app = {
   computed: {
     sortedFilms() {
       const sortedFilms = [...this.films];
-      sortedFilms.sort((film1, film2) => film2.viewCount - film1.viewCount);
+      sortedFilms.sort((film1, film2) => film2.views - film1.views);
       return sortedFilms;
     }
   },

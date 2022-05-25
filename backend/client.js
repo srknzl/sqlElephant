@@ -1,3 +1,5 @@
+const {Client} = require('pg');
+
 let client;
 
 module.exports.getDB = async function() {
@@ -6,7 +8,7 @@ module.exports.getDB = async function() {
             host: 'localhost',
             user: 'serkan',
             password: '123456',
-            database: 'projectx'
+            database: 'dvdrental'
         });
         await client.connect();
     }
