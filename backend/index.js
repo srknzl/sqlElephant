@@ -19,6 +19,22 @@ app.get("/", async (req, res, next) => {
     });
 });
 
+app.get("/detail/:id", async (req, res, next) => {
+    const db = await getDB();
+    const id = req.params.id;
+
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "*");
+
+    db.query(`select description, title as name, release_year as releaseYear, length, rating from film where film_id = ${id};`, (err, r) => {
+        if(err) {
+            return res.json({err})
+        }
+        res.json(r.rows[0]);
+    });
+});
+
+
 Client.newHazelcastClient().then(c => {
     client = c;
     app.listen(3000, () => {
